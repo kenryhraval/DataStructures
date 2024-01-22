@@ -13,9 +13,9 @@ namespace DataStructures
         private int[][] Grid { get; set; }
         private int[][] MineGrid { get; set; }
         private bool[][] Revealed { get; set; }
-        public int Size { get; set; }
+        public int Size { get;  set; }
 
-        public Minesweeper(int size = 4)
+        public Minesweeper(int size = 10)
         {
             Size = size;
             Grid = new int[size][];
@@ -64,10 +64,7 @@ namespace DataStructures
                     }
                 }
             }
-
-            // Add debug information
             Console.WriteLine("Līmenis izveidots, spēle sākas.");
-            PrintGrid();
 
         }
 
@@ -101,7 +98,7 @@ namespace DataStructures
         }
 
         // Atblusošanai (for debug)
-        private void PrintGrid()
+        public void PrintGrid()
         {
             for (int i = 0; i < Size; i++)
             {

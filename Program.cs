@@ -17,6 +17,17 @@ namespace DataStructures
         static void PlayGame()
         {
             Minesweeper minesweeper = new Minesweeper();
+            
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("Vai tu gribi redzēt, kur atrodas mīnas? (j/n): ");
+
+            var opt = Console.ReadLine();
+            if (opt == "j")
+            {
+                Console.WriteLine();
+                minesweeper.PrintGrid();
+            }
 
             while (true)
             {
