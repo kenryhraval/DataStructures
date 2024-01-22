@@ -8,6 +8,8 @@ namespace DataStructures
             var minesweeper = new Minesweeper();
             
             
+
+
             /******* For ReturnPaleandrome
             while (true)
             {
@@ -22,7 +24,6 @@ namespace DataStructures
                 ReturnPalendrome.PrintPalindrome(input);
             }
             *********/
-
 
         }
     }

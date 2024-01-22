@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DataStructures
 {
+    // 1. Uzģenērēt 10x10 masīvu ar 10% iespēju, ka konkrētajā cell ir mīna
+    // 2. 
     public class Minesweeper
     {
         private int[][] Grid { get; set; }
-
         private int[][] MineGrid { get; set; }
         private int Size { get; set; } // 10
 
@@ -18,24 +19,28 @@ namespace DataStructures
             Size = size;
             Grid = new int[size][];
             MineGrid = new int[size][];
-            PopulateGrids();
+            PopulateGrids(); //Aizpildam režģi
             PopulateMines();
             GetMineGrid();
         }
 
-        public void PopulateGrids()
+        private void PopulateGrids() //Šeit mēs aizpildam masīvus ar nullītēm
         {
             for (int i = 0; i < Size; i++)
             {
-                Grid[i] = new int[Size]; // Initialize each sub-array
+                Grid[i] = new int[Size]; //Rinda, kurā mēs izveidojam jauno masīvu
+                MineGrid[i] = new int[Size];
                 for (int j = 0; j < Size; j++)
                 {
                     Grid[i][j] = 0;
+                    MineGrid[i][j] = 0;
                 }
             }
         }
 
-        public void PopulateMines()
+        private void PopulateMines()
+        //0 drošība
+        //1 mīna
         {
             var random = new Random();
             for (int i = 0; i < Size; i++)
@@ -45,13 +50,13 @@ namespace DataStructures
                     var chance = random.Next(10);
                     if (chance == 0)
                     {
-                        Grid[i][j] = 1;
-                        PopulateDetectors(i,j);
+                        MineGrid[i][j] = 1;
+
+                        PopulateDetectors(i, j);
                     }
                 }
             }
         }
-
 
         private void PopulateDetectors(int i, int j)
         {
@@ -80,7 +85,6 @@ namespace DataStructures
             if (i + 1 >= 0 && i + 1 < Size && j + 1 >= 0 && j + 1 < Size)
                 Grid[i + 1][j + 1]++;
         }
-
 
         public void GetMineGrid()
         {   // 5x5
