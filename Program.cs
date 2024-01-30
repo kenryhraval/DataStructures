@@ -1,13 +1,49 @@
 ﻿
+using System.IO.Compression;
 using static DataStructures.Minesweeper;
 
 namespace DataStructures
 {
     internal class Program
     {
+        /************ For GraphExample.cs *******/
 
+        static void Main()
+        {
+            var spore = new GraphExample();
+            spore.StartGame();
+            bool on = true;
 
-        /********* For Minesweeper *********/
+            while (on)
+            {
+                spore.GetDestinations();
+
+                Console.WriteLine();
+                Console.WriteLine("Es vēlos braukt uz... (vai n)");
+
+                var dest = Console.ReadLine();
+                if (dest != "n")
+                {
+                    spore.GoTo(dest);
+                }
+                else
+                {
+                    on = false;
+                }
+                Console.WriteLine();
+
+            }
+        }
+
+        
+        /*************** For VectorSum.cs
+        static void Main()
+        {
+            VectorSum vectorSum = new VectorSum();
+        }
+        *****************/
+
+        /*************** For Minesweeper.cs
 
         static void Main()
         {
@@ -17,7 +53,7 @@ namespace DataStructures
         static void PlayGame()
         {
             Minesweeper minesweeper = new Minesweeper();
-            
+
             Console.WriteLine();
             Console.WriteLine();
             Console.Write("Vai tu gribi redzēt, kur atrodas mīnas? (j/n): ");
@@ -50,12 +86,12 @@ namespace DataStructures
             }
         }
 
+        *************/
 
 
 
+        /******* For ReturnPaleandrome.cs
 
-        /******* For ReturnPaleandrome
-             
         private static void Main(string[] args)
         {
             while (true)
