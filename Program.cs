@@ -14,15 +14,14 @@ namespace DataStructures
             spore.StartGame();
             bool on = true;
 
-            while (on)
+            while (on && spore.GameOver == false)
             {
+
+
                 spore.GetDestinations();
 
-                Console.WriteLine();
-                Console.WriteLine("Es vēlos braukt uz... (vai n)");
-
                 var dest = Console.ReadLine();
-                if (dest != "n")
+                if (dest != "n" )
                 {
                     spore.GoTo(dest);
                 }
@@ -30,12 +29,10 @@ namespace DataStructures
                 {
                     on = false;
                 }
-                Console.WriteLine();
-
             }
         }
 
-        
+
         /*************** For VectorSum.cs
         static void Main()
         {
