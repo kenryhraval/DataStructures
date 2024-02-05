@@ -6,31 +6,37 @@ namespace DataStructures
 {
     internal class Program
     {
-        /************ For GraphExample.cs *******/
-
+        /************ For GraphExample.cs **************/
         static void Main()
         {
-            var spore = new GraphExample();
-            spore.StartGame();
-            bool on = true;
+            var fileExample = new FileExample();
+        }
+            /************ For GraphExample.cs
 
-            while (on && spore.GameOver == false)
+            static void Main()
             {
+                var spore = new GraphExample();
+                spore.StartGame();
+                bool on = true;
 
-
-                spore.GetDestinations();
-
-                var dest = Console.ReadLine();
-                if (dest != "n" )
+                while (on && spore.GameOver == false)
                 {
-                    spore.GoTo(dest);
-                }
-                else
-                {
-                    on = false;
+
+
+                    spore.GetDestinations();
+
+                    var dest = Console.ReadLine();
+                    if (dest != "n" )
+                    {
+                        spore.GoTo(dest);
+                    }
+                    else
+                    {
+                        on = false;
+                    }
                 }
             }
-        }
+            **********/
 
 
         /*************** For VectorSum.cs
