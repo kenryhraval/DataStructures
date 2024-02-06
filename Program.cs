@@ -6,11 +6,18 @@ namespace DataStructures
 {
     internal class Program
     {
-        /************ For GraphExample.cs **************/
+
+        static void Main()
+        {
+            var file = new TreeExample();
+        }
+        /************ For GraphExample.cs 
         static void Main()
         {
             var fileExample = new FileExample();
         }
+
+        *************/
             /************ For GraphExample.cs
 
             static void Main()
